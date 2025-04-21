@@ -11,11 +11,15 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Text("This is the root view ")
-                NavigationLink(destination: Text("You've arrived at the second view!")) {
-                    Text("Click me!")
+                Text("This is the original page ")
+                NavigationLink(destination: SecondView()){
+                    Text("Click me for a halloween theme!")
                 }
+                NavigationLink(destination: Text("Merry Christmas!")){Text("Click me for a christmas theme!")}
             }
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(false)
         }
     }
 }
